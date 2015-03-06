@@ -16,7 +16,6 @@ tbl2 <- tbl_df(mytbl)
 
 #making a new table, by creating a combination of Date and Time  and Taking Global_active_power from the parent table
 tbl3 <- tbl2 %>%
-    select( Date, Time, Global_active_power ) %>%
     mutate( date = dmy(Date) + hms(Time), "GMT") %>%
     select(date,Global_active_power )
 

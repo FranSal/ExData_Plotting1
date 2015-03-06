@@ -1,3 +1,4 @@
+# Plot 1
 # load the needed libraries
 library(lubridate)
 library(sqldf)

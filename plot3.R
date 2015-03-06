@@ -1,4 +1,4 @@
-# PLot 2
+# PLot 3
 library(dplyr)
 ibrary(lubridate)
 library(sqldf)
@@ -22,7 +22,7 @@ tbl3 <- tbl2 %>%
 #open png device
 png(file = "plot3.png", width = 480, height = 480)
 
-# creating the line plot
+# creating the line plots
 with( tbl3,{
     par(mar = c(4,4,4,2))
     plot(date, Sub_metering_1,type="l",  xlab="", ylab="Energy Sub metering", ylim = range(Sub_metering_1), col ="black") 
