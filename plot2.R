@@ -1,4 +1,6 @@
 # PLot 2
+# IMPORTANT NOTE: The data file ** "household_power_consumption.txt" **  must be present in the working directory
+
 library(dplyr)
 ibrary(lubridate)
 library(sqldf)
@@ -9,6 +11,7 @@ library(datasets)
 Sys.setlocale("LC_TIME", "en_US.UTF-8") 
 
 # Reading partial table using sqldf's read.csv2.sql
+fl <- "household_power_consumption.txt"
 mytbl <- read.csv2.sql(fl, sql =" select * from file where Date ='1/2/2007' OR Date ='2/2/2007'", header = TRUE, sep=";", dec="." )
 
 #converting to tbl-df
@@ -30,3 +33,4 @@ with( tbl3,{
 
 dev.off()
 
+ 

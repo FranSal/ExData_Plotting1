@@ -1,4 +1,6 @@
 # PLot 3
+# IMPORTANT NOTE: The data file ** "household_power_consumption.txt" **  must be present in the working directory
+
 library(dplyr)
 ibrary(lubridate)
 library(sqldf)
@@ -9,6 +11,7 @@ library(datasets)
 Sys.setlocale("LC_TIME", "en_US.UTF-8") 
 
 # Reading partial table using sqldf's read.csv2.sql
+fl <- "household_power_consumption.txt"
 mytbl <- read.csv2.sql(fl, sql =" select * from file where Date ='1/2/2007' OR Date ='2/2/2007'", header = TRUE, sep=";", dec="." )
 
 #converting to tbl-df
@@ -25,7 +28,7 @@ png(file = "plot3.png", width = 480, height = 480)
 # creating the line plots
 with( tbl3,{
     par(mar = c(4,4,4,2))
-    plot(date, Sub_metering_1,type="l",  xlab="", ylab="Energy Sub metering", ylim = range(Sub_metering_1), col ="black") 
+    plot(date, Sub_metering_1,type="l",  xlab="", ylab="Energy sub metering", ylim = range(Sub_metering_1), col ="black") 
     lines(date, Sub_metering_2,type="l",   col ="red") 
     lines(date, Sub_metering_3,type="l",  col = "blue") 
     legend("topright",   c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"),  col = c("black", "blue", "red"), lty=1, lwd=2)
@@ -33,3 +36,4 @@ with( tbl3,{
 })
 
 dev.off()
+ 

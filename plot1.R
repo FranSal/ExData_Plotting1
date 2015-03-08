@@ -1,5 +1,7 @@
 # Plot 1
 # load the needed libraries
+# IMPORTANT NOTE: The data file ** "household_power_consumption.txt" **  must be present in the working directory
+
 library(dplyr)
 library(lubridate)
 library(sqldf)
@@ -14,7 +16,7 @@ tbl2$Date <- dmy(tbl2$Date)
 tbl2$Time <- hms(tbl2$Time)
 tbl2$Global_active_power <- as.numeric(tbl2$Global_active_power)
 
-# defining margins and plot a histogrtam as required in Plot 1
+# defining margind and plot a histogrtam as required in Plot 1
 par(mar = c(10,8,8,20))
 png(file = "plot1.png", width = 480, height = 480)
 hist(tbl2$Global_active_power, breaks =seq(0,10, by = 0.5), col="red", xlim =range(0:6, asp=1), ylim= c(0,1200), xaxt="n", main = "Global Active Power", xlab= ("Global Active Power(kilowatts)"))
