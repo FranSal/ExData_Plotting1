@@ -17,7 +17,7 @@ mytbl <- read.csv2.sql(fl, sql =" select * from file where Date ='1/2/2007' OR D
 #converting to tbl-df
 tbl2 <- tbl_df(mytbl)
 
-#making a new table, by creating a combination of Date and Time  and Taking Global_active_power from the parent table
+#making a new table, by creating a combination of Date and Time  and Taking date,Sub_metering_1, Sub_metering_2 and Sub_metering_3  from the parent table
 tbl3 <- tbl2 %>%
     mutate( date = dmy(Date) + hms(Time), "GMT") %>%
     select(date,Sub_metering_1, Sub_metering_2, Sub_metering_3 )
