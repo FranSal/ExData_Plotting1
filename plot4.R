@@ -27,9 +27,7 @@ tbl3 <- tbl2 %>%
 #open png device
 png(file = "plot4.png", width = 480, height = 480)
 
-
 # creating the  4 line plots
->>>>>>> origin/master
 with( tbl3,{
     par(mfrow = c(2, 2),mar = c(6,4,2,1)) # setting the device to 4 plots and appropiate margins
     # Plot1 top left
@@ -48,4 +46,6 @@ with( tbl3,{
 })
 
 dev.off()
+
+
  
