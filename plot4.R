@@ -24,7 +24,7 @@ tbl3 <- tbl2 %>%
 #open png device
 png(file = "plot4.png", width = 480, height = 480)
 
-# creating the line plot2
+# creating the line plots
 with( tbl3,{
     par(mfrow = c(2, 2),mar = c(6,4,2,1)) # setting the device to 4 plots
     # Plot1 top left
